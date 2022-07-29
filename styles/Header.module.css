@@ -1,0 +1,100 @@
+.container{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;    
+    height: 108px;
+    position:absolute;
+    top:0;
+    left:50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    padding: 0 24.375px;
+}
+.input{display:none}
+.input:checked ~ .hamburger{
+    display:none;
+}
+.input:checked ~ .nav{
+    display:block;    
+}
+.logo{
+    position:relative;
+    width:146px;
+    height: 24px;
+    margin-right: auto;
+}
+.nav{
+    display: none;
+    position:absolute;
+    width:100%;
+    top:0;
+    height: 100vh;
+    left:0;
+    color: white;
+    background-color: #000;
+    padding-left: 1.5rem;
+    padding-right: 1.6rem;
+    padding-top:2.55rem;    
+}
+.nav_link{
+    font-size: 24px;
+    display:block;
+    text-transform: uppercase;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-bottom: 1.6rem;
+}
+.nav_close_wrapper{
+    display: flex;
+    margin-bottom: 9.8rem;
+    margin-top: 0.1rem;
+}
+@media screen and (min-width:1440px){
+    .container{
+        width:1115px;    
+        height: 158px;  
+        padding: 0; 
+    }
+    .hamburger, .nav_close_wrapper{display: none;}
+    .logo{
+        width:194px;
+        height: 34px;
+    }
+    .nav{
+        position:static;
+        width:min-content;
+        display: flex;        
+        gap:2rem;
+        height: 100%; 
+        align-items: center;  
+        background-color: transparent;  
+        padding: 0;   
+    }
+    
+    .nav_link{
+        font-size: 16px;
+        font-weight: 300;
+        position:relative;
+        height: 40px;
+        line-height: 40px;
+        padding: 0;
+        align-items: center;
+        text-transform: capitalize;
+    }
+   
+    .nav_link:after{
+        content:"";
+        width:0;
+        height: 2px;
+        position:absolute;
+        background-color: white;
+        bottom:0;
+        left:50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+        transition: width 200ms ease-in-out;
+    }
+    .nav_link:hover:after{
+        width:100%;
+    }    
+}
